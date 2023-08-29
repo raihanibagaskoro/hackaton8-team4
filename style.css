@@ -1,0 +1,17 @@
+#player1{
+    float: left;
+    margin-left: 20px;
+}
+
+#player2{
+    float: right;
+    margin-right: 40px;
+}
+
+.winner{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    
+}
