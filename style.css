@@ -1,3 +1,17 @@
+body{
+    background-image: url("bg.jpeg");
+    background-position: 150%;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+h1{
+    background-color: white;
+}
+.pembungkus{
+    display: inline;
+    height: 100vh;
+}
 #player1{
     float: left;
     margin-left: 20px;
@@ -19,4 +33,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.winner img{
+    height: 200px;
 }
