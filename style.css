@@ -1,11 +1,13 @@
 #player1{
     float: left;
     margin-left: 20px;
+    color: #F1F0E8;
 }
 
 #player2{
     float: right;
     margin-right: 40px;
+    color: #F1F0E8;
 }
 
 .winner{
@@ -13,5 +15,13 @@
     justify-content: center;
     align-items: center;
     height: 100vh;
-    
+    color: #F1F0E8;
 }
+
+body {
+    background-color: #96B6C5;
+}
+
+/* .par {
+    color: #EEE0C9;
+} */
