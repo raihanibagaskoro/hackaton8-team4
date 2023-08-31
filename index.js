@@ -15,7 +15,7 @@ const img1 = document.querySelector("#kerupuk1")
 const img2 = document.querySelector("#kerupuk2")
 const petunjuk = document.querySelector(".petunjuk")
 
-console.dir(btnoke);
+// console.dir(btnoke);
 function playAudio() {
   const audio = document.getElementById("audio");
   audio.play();
@@ -26,10 +26,22 @@ function playKrauk(){
   audio1.play();
 }
 
+let nama1
+let nama2
+
 function oke(){
 petunjuk.style.display = "none"
-}
+
+nama1 = prompt(`Masukkan nama Player 1`)
+nama2 = prompt(`Masukkan nama Player 2`)
+
+document.querySelector(`#player1`).innerText = nama1
+document.querySelector(`#player2`).innerText = nama2
+} 
+
+
 // const music = document.createElement('audio')
+
 function mulai(){
   let timeleft = 3;
   button.style.display = "none"
@@ -57,7 +69,7 @@ function logKey(e) {
       counterPlayer1--
       // player1.innerHTML = `<h1>nilai 1: ${counterPlayer1}</h1>`
       if (counterPlayer1 === 0) {
-        element.innerHTML = `Pemenangnya adalah player 1`
+        element.innerHTML = `Pemenangnya adalah ${nama1}`
         winner.appendChild(element)
         document.querySelector("#countdown").style.display = "none";
         document.getElementById("audio").outerHTML = " "
@@ -70,7 +82,7 @@ function logKey(e) {
       counterPlayer2--
       // player2.innerHTML = `<h1>nilai 2: ${counterPlayer2}</h1>`
       if (counterPlayer2 === 0) {
-        element.innerHTML = `Pemenangnya adalah player 2`
+        element.innerHTML = `Pemenangnya adalah ${nama2}`
         winner.appendChild(element)
         document.querySelector("#countdown").style.display = "none";
         document.getElementById("audio").outerHTML = " "
