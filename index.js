@@ -10,13 +10,24 @@ const player2 = document.querySelector("#player2")
 const winner = document.querySelector(".winner")
 const element = document.createElement('h1')
 const button = document.querySelector("#mulai")
+// const btnoke = document.querySelector("#oke")
 const img1 = document.querySelector("#kerupuk1")
 const img2 = document.querySelector("#kerupuk2")
+const petunjuk = document.querySelector(".petunjuk")
 
-
+console.dir(btnoke);
 function playAudio() {
   const audio = document.getElementById("audio");
   audio.play();
+}
+
+function playKrauk(){
+  const audio1 = document.getElementById("audio1");
+  audio1.play();
+}
+
+function oke(){
+petunjuk.style.display = "none"
 }
 // const music = document.createElement('audio')
 function mulai(){
@@ -30,27 +41,11 @@ function mulai(){
       document.addEventListener('keyup', logKey);
       document.getElementById("countdown").style.display = "none"
     } else {
-      document.getElementById("countdown").innerHTML = timeleft //+ "seconds remaining";
+      document.getElementById("countdown").innerHTML = timeleft
     }
     timeleft -= 1;
   }, 1000);
 }
-
-
-// var timeleft = 10;
-// var downloadTimer = setInterval(function(){
-//   if(timeleft <= 0){
-//     clearInterval(downloadTimer);
-//     document.getElementById("countdown").innerHTML = "Finished";
-//   } else {
-//     document.getElementById("countdown").innerHTML = timeleft + " seconds remaining";
-//   }
-//   timeleft -= 1;
-// }, 1000);
-
-
-
-// document.addEventListener('keyup', logKey)
 
 function logKey(e) {
 

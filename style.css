@@ -1,18 +1,17 @@
-body{
-    background-image: url("bg.jpeg");
-    background-position: 150%;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
 h1{
     background-color: white;
 }
 .pembungkus{
-    display: inline;
+    background-color:skyblue;
+    background-image: url(bgbaru.png);
+    background-size:100%;
+    background-repeat: no-repeat;
+    background-position:center;
     height: 100vh;
+    width: 100%;
+    z-index: -1;
 }
-#player1{
+/* #player1{
     float: left;
     margin-left: 20px;
 }
@@ -20,21 +19,47 @@ h1{
 #player2{
     float: right;
     margin-right: 40px;
-}
+} */
 
 .winner{
-    display: flex;
+    background-color: rgba(0, 0, 0, 0.676);
+    display:flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
+    width: 100%;
+    position: fixed;
 }
 
-#mulai{
+.petunjuk{
+    height: 500px;
+    width: 900px;
+    border-radius: 20px;
+    background-color: rgb(194, 194, 194);
+    position:fixed;
+}
+
+h2{
     display: flex;
     justify-content: center;
-    align-items: center;
+    margin-top: 10px;
+}
+#mulai{
+    display: flex;
 }
 
-.winner img{
+#kerupuk1{
     height: 200px;
+    position: absolute;
+    display: flex;
+    top: 360px;
+    left: 385px;
+}
+
+#kerupuk2{
+    height: 200px;
+    position: absolute;
+    display: flex;
+    top: 360px;
+    left: 920px;
 }
