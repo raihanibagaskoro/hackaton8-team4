@@ -17,8 +17,6 @@ const pemenang = document.querySelector("#pemenang")
 const img1 = document.querySelector("#kerupuk1")
 const img2 = document.querySelector("#kerupuk2")
 const petunjuk = document.querySelector(".petunjuk")
-
-// console.dir(winner.style.backgroundColor);
 function playAudio() {
   const audio = document.getElementById("audio");
   audio.play();
@@ -33,7 +31,6 @@ function playKrauk(){
   const audio2 = document.getElementById("audio2");
   audio2.play();
 }
-
 let nama1
 let nama2
 
@@ -47,6 +44,7 @@ document.querySelector(`#player1`).innerText = nama1
 document.querySelector(`#player2`).innerText = nama2
 } 
 // const music = document.createElement('audio')
+
 function mulai(){
   let timeleft = 3;
   button.style.display = "none"
