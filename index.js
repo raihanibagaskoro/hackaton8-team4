@@ -8,22 +8,30 @@ const player2 = document.querySelector("#player2")
 // player2.innerHTML = `<h1>nilai 2: ${counterPlayer2}</h1>`
 
 const winner = document.querySelector(".winner")
-const element = document.createElement('h1')
+const element = document.createElement('h2')
+const kata = document.createElement('h2')
+const br = document.createElement("br")
 const button = document.querySelector("#mulai")
+const pemenang = document.querySelector("#pemenang")
 // const btnoke = document.querySelector("#oke")
 const img1 = document.querySelector("#kerupuk1")
 const img2 = document.querySelector("#kerupuk2")
 const petunjuk = document.querySelector(".petunjuk")
 
-// console.dir(btnoke);
+// console.dir(winner.style.backgroundColor);
 function playAudio() {
   const audio = document.getElementById("audio");
   audio.play();
 }
 
-function playKrauk(){
+function playCongrats(){
   const audio1 = document.getElementById("audio1");
   audio1.play();
+}
+
+function playKrauk(){
+  const audio2 = document.getElementById("audio2");
+  audio2.play();
 }
 
 let nama1
@@ -38,17 +46,16 @@ nama2 = prompt(`Masukkan nama Player 2`)
 document.querySelector(`#player1`).innerText = nama1
 document.querySelector(`#player2`).innerText = nama2
 } 
-
-
 // const music = document.createElement('audio')
 
 function mulai(){
   let timeleft = 3;
   button.style.display = "none"
   let downloadTimer = setInterval(function () {
-    if (timeleft <= -1) {
+    if (timeleft < 0) {
       // audio.innerHTML = '<audio id="audio" src="war.mp3" autoplay></audio>'
-     
+      winner.style.backgroundColor = "rgba(255, 255, 255, 0)"
+      playAudio()
       clearInterval(downloadTimer);
       document.addEventListener('keyup', logKey);
       document.getElementById("countdown").style.display = "none"
@@ -65,12 +72,15 @@ function logKey(e) {
 
   } else {
     if (e.code === "KeyZ" && counterPlayer1 > 0) {
-      playAudio()
       counterPlayer1--
+      playKrauk()
       // player1.innerHTML = `<h1>nilai 1: ${counterPlayer1}</h1>`
       if (counterPlayer1 === 0) {
-        element.innerHTML = `Pemenangnya adalah ${nama1}`
-        winner.appendChild(element)
+        playCongrats()
+        pemenang.style.display = "block"
+        winner.style.backgroundColor = "rgba(0, 0, 0, 0.676)"
+        element.innerHTML = `${nama1} 🏅 <br><br> Kamu telah berhasil menjuarai lomba makan kerupuk antar HACKTIV `
+        pemenang.appendChild(element)
         document.querySelector("#countdown").style.display = "none";
         document.getElementById("audio").outerHTML = " "
         img1.src = " "
@@ -80,10 +90,14 @@ function logKey(e) {
 
     if (e.code === "KeyM" && counterPlayer2 > 0) {
       counterPlayer2--
+      playKrauk()
       // player2.innerHTML = `<h1>nilai 2: ${counterPlayer2}</h1>`
       if (counterPlayer2 === 0) {
-        element.innerHTML = `Pemenangnya adalah ${nama2}`
-        winner.appendChild(element)
+        playCongrats()
+        pemenang.style.display = "block"
+        winner.style.backgroundColor = "rgba(0, 0, 0, 0.676)"
+        element.innerHTML = `${nama2} 🏅 <br><br> Kamu telah berhasil menjuarai lomba makan kerupuk antar HACKTIV`
+        pemenang.appendChild(element)
         document.querySelector("#countdown").style.display = "none";
         document.getElementById("audio").outerHTML = " "
         img1.src = " "
